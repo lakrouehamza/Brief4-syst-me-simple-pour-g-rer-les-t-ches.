@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <title>To do list</title>
+</head>
+<body>
+<div id="modal1"></div>
+  
+ 
+<!--     -->
+
+  <div class="flex items-center flex-wrap gap-4">
+    <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800" onclick="addTesk()">Button 1</button>
+  <div class="relative max-w-sm mx-auto mt-3">
+
+    <input class="w-full py-2 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" type="search" placeholder="Search">
+    <button class="absolute inset-y-0 right-0 flex items-center px-4 text-gray-700 bg-gray-100 border border-gray-300 rounded-r-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M14.795 13.408l5.204 5.204a1 1 0 01-1.414 1.414l-5.204-5.204a7.5 7.5 0 111.414-1.414zM8.5 14A5.5 5.5 0 103 8.5 5.506 5.506 0 008.5 14z" />
+    </svg>
+  </button>
+
+</div>
+
+    <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 "onclick="addToDO()">Button 3</button>
+  </div>
+
+
+
+    <!--        ...................;;             -->
+    <div class="bg-gray-100 min-h-screen p-8">
+        <div class="container mx-auto">
+      
+          <div class="flex flex-col md:flex-row gap-6">
+            
+            <div class="flex-1   p-4 rounded-lg shadow">
+              <h2 class="text-xl font-semibold mb-4">To Do</h2>
+            <!--    -->
+              <ul id="todo-list" class="min-h-[200px] space-y-2" >
+
+              </ul>
+            <!--   -->
+            </div>
+      
+            <div class="flex-1 p-4 rounded-lg shadow">
+
+        <h2 class="text-xl font-semibold mb-4">In Progress</h2>
+              <!--  -->
+              <ul id="progress-list" class="min-h-[200px] space-y-2">
+              </ul>
+              <!--  -->
+            </div>
+      
+            <!--   -->
+            <div class="flex-1 p-4 rounded-lg shadow">
+              <p class="text-xl font-semibold mb-4 bg-emerald-200">Done </p>
+              
+              <ul id="done-list" class="min-h-[200px] space-y-2">
+              </ul>
+            </div>
+
+            <!--   -->
+          </div>
+        </div>
+      
+    </div>
+
+
+
+    <script src="file.js"></script>
+</body>
+</html>
+
+
+
