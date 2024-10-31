@@ -1,29 +1,44 @@
-
-
 // ********************** declaration des variaible ********************************
+
 var modal = document.getElementById("divModal");
+var modal2 = document.getElementById("divModal2");
 var des1 = document.getElementById('descriptionid');
 var date1 = document.getElementById('dateid');
 var proprety1 = document.getElementById('propretyid');
 var category1 = document.getElementById('categoryid');
 var title1 = document.getElementById('Titleid');
+var modalEdet= document.getElementById("divModal2");
+var desEdet = document.getElementById('descriptionid2');
+var dateEdet = document.getElementById('dateid2');
+var propretyEdet = document.getElementById('propretyid2');
+var categoryEdet = document.getElementById('categoryid2');
+var titleEdet = document.getElementById('Titleid2');
 var toDo_liste = document.getElementById("todo_list");
 var inProgress_liste = document.getElementById("inProgress_list");
 var done_liste = document.getElementById("done_list");
 var save = document.getElementById("saveAdd");
+var edit = document.getElementById("editid");
+var supreme =document.getElementById("deleteid");
+var numbreToDo = 0;
+var numbreProgress = 0;
+var numbreDone;
+
 // *************  declaration un liste pour stock  les objet localment ************
 var listeElement = [];
 // ************* display pour la modal  ********************************************
 modal.style.display = "none";
+
 // ********* display blok pour la mode consernent cilk sur la button add task ******
 function addTesk() {
     modal.style.display = "block";
 }
-// ****************** 
+
+// ************** blok pour la mode consernent cilk sur la button ferme modal ******
 function fermeaddTesk() {
     modal.style.display = "none";
+    modal2.style.display = "none";
 }
-
+//************fonction pour lire le varaible dans input et stock dans tableau ******
 save.addEventListener("click", function() {
     if (des1.value == "" || title1.value == "" || date1.value == null) {
         alert("Remplissez tous les champs");
@@ -41,19 +56,21 @@ save.addEventListener("click", function() {
     modalAdd();
 });
 
+//******** fonction est afficher les contune de tableau dans les itemes de flex ******
 function modalAdd() {
+    // supreme le itemes de flex
     toDo_liste.innerHTML = "";
     inProgress_liste.innerHTML = "";
     done_liste.innerHTML = "";
-
+    // rempele les itemes de flex
     for (var i = 0; i < listeElement.length; i++) {
         var itemHTML = `
             <div class="bg-white rounded p-4 mb-4" style="background-color: ${listeElement[i].proprety2}">
-                <h3 class="font-bold">${listeElement[i].title2}</h3>
-                <p>${listeElement[i].des2}</p>
+                <h3 class="font-bold"  >${listeElement[i].title2}</h3>
+                <p >${listeElement[i].des2}</p>
                 <div class="flex justify-between mt-2">
-                    <button class="bg-blue-500 text-white py-1 px-3 rounded">Edit</button>
-                    <button class="bg-red-500 text-white py-1 px-3 rounded">Delete</button>
+                    <button class="bg-blue-500 text-white py-1 px-3 rounded" value="${i}" id="editid">Edit</button>
+                    <button class="bg-red-500 text-white py-1 px-3 rounded"value="${i} id="deleteid">Delete</button>
                 </div>
             </div>
         `;
@@ -73,3 +90,8 @@ function modalAdd() {
         }
     }
 }
+document.getElementById("editid").addEventListener("click", function() {
+   //modalEdet desEdet  dateEdet  propretyEdet  categoryEdet titleEdet
+//    modal2.style.display = "block";
+    alert("!!!!");
+})
