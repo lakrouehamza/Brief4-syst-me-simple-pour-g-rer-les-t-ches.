@@ -27,6 +27,8 @@ var numbreDone;
 var listeElement = [];
 // ************* display pour la modal  ********************************************
 modal.style.display = "none";
+// ************* display pour la modal edet ****************************************
+modal2.style.display = "none";
 
 // ********* display blok pour la mode consernent cilk sur la button add task ******
 function addTesk() {
