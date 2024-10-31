@@ -71,8 +71,8 @@ function modalAdd() {
                 <h3 class="font-bold"  >${listeElement[i].title2}</h3>
                 <p >${listeElement[i].des2}</p>
                 <div class="flex justify-between mt-2">
-                    <button class="bg-blue-500 text-white py-1 px-3 rounded" value="${i}" id="editid">Edit</button>
-                    <button class="bg-red-500 text-white py-1 px-3 rounded"value="${i} id="deleteid">Delete</button>
+                    <button class="bg-blue-500 text-white py-1 px-3 rounded"    onclick="addEdet(${i})" id ="editid">Edit</button>
+                    <button class="bg-red-500 text-white py-1 px-3 rounded"id="deleteid" id="deleteid">Delete</button>
                 </div>
             </div>
         `;
@@ -92,8 +92,31 @@ function modalAdd() {
         }
     }
 }
-document.getElementById("editid").addEventListener("click", function() {
-   //modalEdet desEdet  dateEdet  propretyEdet  categoryEdet titleEdet
-//    modal2.style.display = "block";
-    alert("!!!!");
-})
+
+
+
+// function addEdet() {
+//     modal2.style.display = "block";
+//     // console.log(listeElement[0].des2);
+//     titleEdet.innerHTML= "listeElement[0].title2" ;
+//     desEdet.innerHTML= listeElement[0].category2;
+//     dateEdet.innerHTML= listeElement[0].date2;
+//     propretyEdet.innerHTML= listeElement[0].proprety2 ;
+//     categoryEdet.innerHTML= listeElement[0].category2 ;
+// }
+function addEdet(index) {
+    // Affiche la modal d'édition
+    modal2.style.display = "block";
+
+    // Charge les valeurs de l'élément sélectionné dans les champs d'édition
+    titleEdet.value = listeElement[index].title2;
+    desEdet.value = listeElement[index].des2;
+    dateEdet.value = listeElement[index].date2;
+    propretyEdet.value = listeElement[index].proprety2;
+    categoryEdet.value = listeElement[index].category2;
+}
+
+// document.getElementById("editid").addEventListener("click", function() {
+//    //modalEdet desEdet  dateEdet  propretyEdet  categoryEdet titleEdet
+//     alert("!!!!");
+// })
