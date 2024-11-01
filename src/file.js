@@ -93,4 +93,23 @@ function modalAdd() {
     }
 }
 
+function addEdet(index) {
+    modal2.style.display = "block";
+    const task = listeElement[index];
+    titleEdet.value = task.title2;
+    desEdet.value = task.des2;
+    dateEdet.value = task.date2;
+    propretyEdet.value = task.proprety2;
+    categoryEdet.value = task.category2;
 
+    // Save changes made in the edit modal
+    document.getElementById("saveEdet").onclick = function() {
+        task.title2 = titleEdet.value;
+        task.des2 = desEdet.value;
+        task.date2 = dateEdet.value;
+        task.proprety2 = propretyEdet.value;
+        task.category2 = categoryEdet.value;
+        fermeaddTesk();
+        modalAdd();
+    };
+}
