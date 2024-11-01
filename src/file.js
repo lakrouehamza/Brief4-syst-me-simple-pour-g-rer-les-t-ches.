@@ -141,4 +141,9 @@ function deleteTask(index) {
     listeElement.splice(index, 1);
     modalAdd(); 
 }
-
+function filter(PRO){
+    var listeTemp = listeElement;
+    listeElement =listeElement.filter((elementListe)=>elementListe.proprety2 == PRO);
+    modalAdd();
+    listeElement=listeTemp;   
+}
