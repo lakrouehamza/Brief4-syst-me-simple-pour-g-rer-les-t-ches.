@@ -94,32 +94,3 @@ function modalAdd() {
 }
 
 
-
-// function addEdet() {
-//     modal2.style.display = "block";
-//     // console.log(listeElement[0].des2);
-//     titleEdet.innerHTML= "listeElement[0].title2" ;
-//     desEdet.innerHTML= listeElement[0].category2;
-//     dateEdet.innerHTML= listeElement[0].date2;
-//     propretyEdet.innerHTML= listeElement[0].proprety2 ;
-//     categoryEdet.innerHTML= listeElement[0].category2 ;
-// }
-// function addEdet(index) {
-//     // Affiche la modal d'édition
-//     modal2.style.display = "block";
-
-//     console.log(index);
-//     // Charge les valeurs de l'élément sélectionné dans les champs d'édition
-//     // titleEdet.value = listeElement[index].title2;
-//     desEdet.value = listeElement[index].des2;
-//     dateEdet.value = listeElement[index].date2;
-//     // propretyEdet.value = listeElement[index].proprety2;
-//     // categoryEdet.value = listeElement[index].category2;
-// }
-
-// document.getElementById("editid").addEventListener("click", function() {
-//    //modalEdet desEdet  dateEdet  propretyEdet  categoryEdet titleEdet
-//     alert("!!!!");
-// })
-
-// Opens the edit modal and loads selected task data
