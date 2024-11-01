@@ -154,11 +154,17 @@ var listeTemp = listeElement;
     listeElement=listeTemp;  
     console.log(listeElement); 
 }
-
-function tri(){
-    // substring(7, 13);
+function compareDate(p1, p2) {
+    if(!(a.date2.substring(7,10).localeCompare(b.date2.substring(7,10))))
+        return a.date2.substring(7,10).localeCompare(b.date2.substring(7,10));
+   else if( !(a.date2.substring(4,5).localeCompare(b.date2.substring(4,5))))
+        return a.date2.substring(4,5).localeCompare(b.date2.substring(4,5));
+    else 
+    return a.date2.substring(1,2).localeCompare(b.date2.substring(1,2));
+  }
+function tri(){ 
     listeElement.sort(function (a, b) {
-        return a.date2.localeCompare(b.date2); 
+        return a.date2.compareDate(b.date2); 
       });
       modalAdd();
 }
