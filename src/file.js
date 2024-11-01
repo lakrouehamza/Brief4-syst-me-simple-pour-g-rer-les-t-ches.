@@ -113,3 +113,10 @@ function addEdet(index) {
         modalAdd();
     };
 }
+
+// Deletes a task
+function deleteTask(index) {
+    listeElement.splice(index, 1);
+    modalAdd(); 
+}
+
