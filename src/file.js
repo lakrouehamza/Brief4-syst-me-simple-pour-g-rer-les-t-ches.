@@ -21,17 +21,14 @@ var edit = document.getElementById("editid");
 var supreme =document.getElementById("deleteid");
 // var checkbo = document.getElementsByName('choix');
 // var filtre = document.querySelectorAll('choix');
-// var numbreToDo =document.getElementById("donen");
-// var numbreProgress = document.getElementsByName('progressn');
-// var numbreDone = document.querySelectorAll('toDon');    
-//     tempToDo.value = 0;
-//     tempProgress.value = 0;
-//     tempDone.value =0;
+var numbreToDo =document.getElementById("toDon");
+var numbreProgress = document.getElementById('progressn');
+var numbreDone = document.getElementById('donen'); 
 
 // *************  declaration un liste pour stock  les objet localment ************
 var listeElement = [];
 // ************* display pour la modal  ********************************************
-modal.style.display = "none";
+modal.style.display = "none"; 
 // ************* display pour la modal edet ****************************************
 modal2.style.display = "none";
 
@@ -69,11 +66,7 @@ function modalAdd() {
     toDo_liste.innerHTML = "";
     inProgress_liste.innerHTML = "";
     done_liste.innerHTML = "";
-    
-    numbreToDo = 0;
-    numbreProgress = 0;
-    numbreDone =0;
-    // rempele les itemes de flex
+     // rempele les itemes de flex
     for (var i = 0; i < listeElement.length; i++) {
         var itemHTML = `
             <div class="bg-white rounded p-4 mb-4" style="background-color: ${listeElement[i].proprety2}">
@@ -100,9 +93,28 @@ function modalAdd() {
                 alert('Erreur dans la catégorie');
         }
     }
+    statistique();
 
 }
+function statistique(){
+       
+var  tempToDo = 0;
+var tempProgress = 0;
+var tempDone =0;
+for (var i = 0; i < listeElement.length; i++) {
 
+    switch (listeElement[i].category2) {
+        case 'TO DO':tempToDo++;break;
+        case 'DOING':tempProgress++;break;
+        case 'DON':tempDone++;break;
+        default:;
+    }
+
+}
+numbreToDo.innerHTML=tempToDo;
+numbreProgress.innerHTML=tempProgress;
+numbreDone.innerHTML=tempDone;
+}
 function addEdet(index) {
     modal2.style.display = "block";
     const task = listeElement[index];
