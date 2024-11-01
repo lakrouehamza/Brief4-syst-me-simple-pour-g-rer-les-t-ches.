@@ -122,7 +122,7 @@ function deleteTask(index) {
 }
 
 
-checkbo.addEventListener('click',function(){
-    if(checkbo.value=="date")
-    if(checkbo.value=="proprety")
-})
+// checkbo.addEventListener('click',function(){
+//     if(checkbo.value=="date")
+//     if(checkbo.value=="proprety")
+// })
