@@ -21,10 +21,10 @@
         </div>
         
       <label>
-        <button  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">tri pardate</button>
+        <button  class="bg-cyan-900 border border-gray-300 text-gray-50 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">tri par date</button>
       </label>
       <label>
-        fitre par propret  
+        fitre par
         <label>
           <input type="radio" name="choix" value="red">
           P1
@@ -43,25 +43,30 @@
       </label>
 
         <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800" >Add meltible</button>
-    </div> 
+    </div>
+    
+    
     <div class="bg-gray-100 min-h-screen p-8">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row gap-6">
-                <div class="flex-1 p-4 rounded-lg shadow">
-                    <p class="text-xl font-semibold mb-4">To Do </p>
+                <div class=" p-4 rounded-lg shadow">
+                    <div><span class="text-xl font-semibold mb-4  ">To Do </span> <span class="ml-52  text-blue-600" id="toDon">1</span></div>
                     <ul id="todo_list" class="min-h-[200px] space-y-2"></ul>
                 </div>
-                <div class="flex-1 p-4 rounded-lg shadow">
-                    <p class="text-xl font-semibold mb-4 flex">In Progress<p>hh</p></p>
-                    <ul id="inProgress_list" class="min-h-[200px] space-y-2"></ul>
-                </div>
-                <div class="flex-1 p-4 rounded-lg shadow">
-                    <p class="text-xl font-semibold mb-4 bg-emerald-200">Done</p>
+
+                
+                <div class=" p-4 rounded-lg shadow">
+                  <div><span class="text-xl font-semibold mb-4   ">In progressn</span> <span class="ml-52  text-blue-600" id="progressn">1</span></div> 
+                  <ul id="inProgress_list" class="min-h-[200px] space-y-2"></ul>  
+              </div>
+                <div class=" p-4 rounded-lg shadow">
+                    <div ><span class="text-xl font-semibold mb-4   ">Done </span> <span class="ml-52  text-blue-600" id="donen">1</span></div>
                     <ul id="done_list" class="min-h-[200px] space-y-2"></ul>
                 </div>
             </div>
         </div>
     </div> 
+
     <!-- Main modal -->
     <div id="divModal" tabindex="-1" aria-hidden="true" class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">

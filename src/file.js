@@ -19,11 +19,14 @@ var done_liste = document.getElementById("done_list");
 var save = document.getElementById("saveAdd");
 var edit = document.getElementById("editid");
 var supreme =document.getElementById("deleteid");
-var checkbo = document.getElementsByName('choix');
-var filtre = document.querySelectorAll('choix');
-var numbreToDo = 0;
-var numbreProgress = 0;
-var numbreDone;
+// var checkbo = document.getElementsByName('choix');
+// var filtre = document.querySelectorAll('choix');
+// var numbreToDo =document.getElementById("donen");
+// var numbreProgress = document.getElementsByName('progressn');
+// var numbreDone = document.querySelectorAll('toDon');    
+//     tempToDo.value = 0;
+//     tempProgress.value = 0;
+//     tempDone.value =0;
 
 // *************  declaration un liste pour stock  les objet localment ************
 var listeElement = [];
@@ -66,6 +69,10 @@ function modalAdd() {
     toDo_liste.innerHTML = "";
     inProgress_liste.innerHTML = "";
     done_liste.innerHTML = "";
+    
+    numbreToDo = 0;
+    numbreProgress = 0;
+    numbreDone =0;
     // rempele les itemes de flex
     for (var i = 0; i < listeElement.length; i++) {
         var itemHTML = `
@@ -81,18 +88,19 @@ function modalAdd() {
 
         switch (listeElement[i].category2) {
             case 'TO DO':
-                toDo_liste.innerHTML += itemHTML;
+                toDo_liste.innerHTML += itemHTML; 
                 break;
             case 'DOING':
-                inProgress_liste.innerHTML += itemHTML;
+                inProgress_liste.innerHTML += itemHTML; 
                 break;
             case 'DON':
-                done_liste.innerHTML += itemHTML;
+                done_liste.innerHTML += itemHTML; 
                 break;
             default:
                 alert('Erreur dans la catégorie');
         }
     }
+
 }
 
 function addEdet(index) {
@@ -122,24 +130,3 @@ function deleteTask(index) {
     modalAdd(); 
 }
 
-
-//******** fonction est afficher les contune de tableau dans les itemes de flex ******
-
-
-
-// checkbo.addEventListener('click',function(){
-//     if(checkbo.value=="date")
-//     if(checkbo.value=="proprety")
-// })
-// document.getElementById("triDate").addEventListener('click',function(){
-//     listeElement.sort(function (a, b) {
-//         return a.name.localeCompare(b.name);
-//       });
-// })
-
-// const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
-
-// const result = words.filter((word) => word.length > 6);
-
-// console.log(result);
-// // Expected output: Array ["exuberant", "destruction", "present"]
