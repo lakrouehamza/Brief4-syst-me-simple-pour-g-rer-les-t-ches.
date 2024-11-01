@@ -154,3 +154,11 @@ var listeTemp = listeElement;
     listeElement=listeTemp;  
     console.log(listeElement); 
 }
+
+function tri(){
+    // substring(7, 13);
+    listeElement.sort(function (a, b) {
+        return a.date2.localeCompare(b.date2); 
+      });
+      modalAdd();
+}
