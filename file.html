@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Boutons Radio</title>
     
     <link rel="stylesheet" href="src/css/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,73 +11,54 @@
 </head>
 <body>
 
-    <!DOCTYPE html>
-    <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Boutons Radio</title>
-    </head>
-    <body>
-  
-            <label>
-                <input type="radio" name="choix" value="option1">
-                Option 1
-            </label><br>
-            
-            <label>
-                <input type="radio" name="choix" value="option2">
-                Option 2
-            </label>
-  
-    </body>
+    <label>
+        <input type="radio" name="choix" value="option1" onclick="fi('option1')" checked>
+        Option 1
+    </label><br>
+    
+    <label>
+        <input type="radio" name="choix" value="option2" onclick="fi('option2')">
+        Option 2
+    </label>
+
     <script>
-
- var items = [
-  { name: "Edward", value: 21 },
-  { name: "Sharpe", value: 37 },
-  { name: "And", value: 45 },
-  { name: "The", value: -12 },
-  { name: "Magnetic", value: 13 },
-  { name: "Zeros", value: 37 },
-];
- 
-
-items.sort(function (a, b) {
-  return compare(a.name ,b.name);
-});
-console.log(items);
-
+        function fi(v) {
+            console.log(v);
+        }
     </script>
-     
+
+</body>
 </html>
 
-// exemple tri un tableau  de objet par un atribu
-// tri par value
-var items = [
-  { name: "Edward", value: 21 },
-  { name: "Sharpe", value: 37 },
-  { name: "And", value: 45 },
-  { name: "The", value: -12 },
-  { name: "Magnetic", value: 13 },
-  { name: "Zeros", value: 37 },
-];
-items.sort(function (a, b) {
-  return a.value - b.value;
-});
 
-// tri chaine caractire 
-var items = [
-  { name: "Edward", value: 21 },
-  { name: "Sharpe", value: 37 },
-  { name: "And", value: 45 },
-  { name: "The", value: -12 },
-  { name: "Magnetic", value: 13 },
-  { name: "Zeros", value: 37 },
-];
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutons Radio</title>
+    
+    <link rel="stylesheet" href="src/css/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
 
-items.sort(function (a, b) {
-  return a.name.localeCompare(b.name);
-});
+    <label>
+        <input type="radio" name="choix" value="option1" onclick="fi('option1')" checked>
+        Option 1
+    </label><br>
+    
+    <label>
+        <input type="radio" name="choix" value="option2" onclick="fi('option2')">
+        Option 2
+    </label>
 
-console.log(items);
+    <script>
+        function fi(v) {
+            console.log(v);
+        }
+    </script>
+
+</body>
+</html>

@@ -66,6 +66,7 @@ function modalAdd() {
     toDo_liste.innerHTML = "";
     inProgress_liste.innerHTML = "";
     done_liste.innerHTML = "";
+
      // rempele les itemes de flex
     for (var i = 0; i < listeElement.length; i++) {
         var itemHTML = `
@@ -96,6 +97,7 @@ function modalAdd() {
     statistique();
 
 }
+
 function statistique(){
        
 var  tempToDo = 0;
@@ -141,9 +143,14 @@ function deleteTask(index) {
     listeElement.splice(index, 1);
     modalAdd(); 
 }
-function filter(PRO){
-    var listeTemp = listeElement;
-    listeElement =listeElement.filter((elementListe)=>elementListe.proprety2 == PRO);
+// profils = profils.filter(p => p.id !== id);
+function filterTasks(pro){
+console.log(pro);
+
+var listeTemp = listeElement;
+    listeElement =listeElement.filter(elementListe=>elementListe.proprety2 == pro);
+    console.log(listeElement);
     modalAdd();
-    listeElement=listeTemp;   
+    listeElement=listeTemp;  
+    console.log(listeElement); 
 }
