@@ -19,6 +19,7 @@ var done_liste = document.getElementById("done_list");
 var save = document.getElementById("saveAdd");
 var edit = document.getElementById("editid");
 var supreme =document.getElementById("deleteid");
+var checkbo = document.getElementsByName('choix');
 var numbreToDo = 0;
 var numbreProgress = 0;
 var numbreDone;
@@ -120,3 +121,8 @@ function deleteTask(index) {
     modalAdd(); 
 }
 
+
+checkbo.addEventListener('click',function(){
+    if(checkbo.value=="date")
+    if(checkbo.value=="proprety")
+})
