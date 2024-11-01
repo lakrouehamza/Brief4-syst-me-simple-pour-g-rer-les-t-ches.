@@ -31,7 +31,53 @@
             </label>
   
     </body>
-    </html>
-    
-</body>
+    <script>
+
+ var items = [
+  { name: "Edward", value: 21 },
+  { name: "Sharpe", value: 37 },
+  { name: "And", value: 45 },
+  { name: "The", value: -12 },
+  { name: "Magnetic", value: 13 },
+  { name: "Zeros", value: 37 },
+];
+ 
+
+items.sort(function (a, b) {
+  return compare(a.name ,b.name);
+});
+console.log(items);
+
+    </script>
+     
 </html>
+
+// exemple tri un tableau  de objet par un atribu
+// tri par value
+var items = [
+  { name: "Edward", value: 21 },
+  { name: "Sharpe", value: 37 },
+  { name: "And", value: 45 },
+  { name: "The", value: -12 },
+  { name: "Magnetic", value: 13 },
+  { name: "Zeros", value: 37 },
+];
+items.sort(function (a, b) {
+  return a.value - b.value;
+});
+
+// tri chaine caractire 
+var items = [
+  { name: "Edward", value: 21 },
+  { name: "Sharpe", value: 37 },
+  { name: "And", value: 45 },
+  { name: "The", value: -12 },
+  { name: "Magnetic", value: 13 },
+  { name: "Zeros", value: 37 },
+];
+
+items.sort(function (a, b) {
+  return a.name.localeCompare(b.name);
+});
+
+console.log(items);

@@ -20,6 +20,7 @@ var save = document.getElementById("saveAdd");
 var edit = document.getElementById("editid");
 var supreme =document.getElementById("deleteid");
 var checkbo = document.getElementsByName('choix');
+var filtre = document.querySelectorAll('choix');
 var numbreToDo = 0;
 var numbreProgress = 0;
 var numbreDone;
@@ -122,7 +123,23 @@ function deleteTask(index) {
 }
 
 
-checkbo.addEventListener('click',function(){
-    if(checkbo.value=="date")
-    if(checkbo.value=="proprety")
-})
+//******** fonction est afficher les contune de tableau dans les itemes de flex ******
+
+
+
+// checkbo.addEventListener('click',function(){
+//     if(checkbo.value=="date")
+//     if(checkbo.value=="proprety")
+// })
+// document.getElementById("triDate").addEventListener('click',function(){
+//     listeElement.sort(function (a, b) {
+//         return a.name.localeCompare(b.name);
+//       });
+// })
+
+// const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+
+// const result = words.filter((word) => word.length > 6);
+
+// console.log(result);
+// // Expected output: Array ["exuberant", "destruction", "present"]
