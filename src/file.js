@@ -35,6 +35,11 @@ modal2.style.display = "none";
 // ********* display blok pour la mode consernent cilk sur la button add task ******
 function addTesk() {
     modal.style.display = "block";
+    des1.value="";
+    date1.value="";
+    proprety1.value="";
+    category1.value="";
+    title1.value="";
 }
 
 // ************** blok pour la mode consernent cilk sur la button ferme modal ******
@@ -153,18 +158,22 @@ var listeTemp = listeElement;
     modalAdd();
     listeElement=listeTemp;  
     console.log(listeElement); 
+
 }
-function compareDate(p1, p2) {
-    if(!(a.date2.substring(7,10).localeCompare(b.date2.substring(7,10))))
-        return a.date2.substring(7,10).localeCompare(b.date2.substring(7,10));
-   else if( !(a.date2.substring(4,5).localeCompare(b.date2.substring(4,5))))
-        return a.date2.substring(4,5).localeCompare(b.date2.substring(4,5));
-    else 
-    return a.date2.substring(1,2).localeCompare(b.date2.substring(1,2));
-  }
-function tri(){ 
-    listeElement.sort(function (a, b) {
-        return a.date2.compareDate(b.date2); 
-      });
-      modalAdd();
+function compareDate(p1, p2) { //jj/mm/aaaa
+    // Compare years
+    if (p1.date2.substring(6, 10) !== p2.date2.substring(6, 10)) {
+        return p1.date2.substring(6, 10).localeCompare(p2.date2.substring(6, 10));
+    }
+    // Compare months
+    else if (p1.date2.substring(3, 5) !== p2.date2.substring(3, 5)) {
+        return p1.date2.substring(3, 5).localeCompare(p2.date2.substring(3, 5));
+    }
+    // Compare days
+    return p1.date2.substring(0, 2).localeCompare(p2.date2.substring(0, 2));
+}
+
+function tri() {
+    listeElement.sort(compareDate);
+    modalAdd();
 }
