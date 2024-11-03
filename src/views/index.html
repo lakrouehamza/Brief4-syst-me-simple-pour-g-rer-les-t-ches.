@@ -20,29 +20,27 @@
             </button>
         </div>
         
-      <label>
-        <button  class="bg-cyan-900 border border-gray-300 text-gray-50 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 " onclick="tri()">tri par date</button>
-      </label>
-      <label>
-        fitre par
         <label>
-          <input type="radio" name="choix" value="red" onclick="filterTasks(this.value)">
-          P1
-      </label>
+            <button  class="bg-cyan-900 border border-gray-300 text-gray-50 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 " onclick="tri()">tri par date</button>
+        </label>
+        <label>
+            fitre par :
+        <label> 
+            P1
+            <input type="radio" name="choix" value="red" onclick="filterTasks(this.value)">
+        </label>
       
-      <label>
-          <input type="radio" name="choix" value="orange" onclick="filterTasks(this.value)">
-          P2
-      </label>
-      
-      <label>
-          <input type="radio" name="choix" value="green" onclick="filterTasks(this.value)">
-          P3
-      </label>
+        <label>
+            P2
+            <input type="radio" name="choix" value="orange" onclick="filterTasks(this.value)">
+        </label>
+        <label>
+            P3
+            <input type="radio" name="choix" value="green" onclick="filterTasks(this.value)">
+        </label>
 
-      </label>
+        </label>
 
-        <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800" >Add meltible</button>
     </div>
     
     
@@ -58,7 +56,7 @@
                 <div class=" p-4 rounded-lg shadow">
                   <div><span class="text-xl font-semibold mb-4   ">In progressn</span> <span class="ml-52  text-blue-600" id="progressn">0</span></div> 
                   <ul id="inProgress_list" class="min-h-[200px] space-y-2"></ul>  
-              </div>
+                </div>
                 <div class=" p-4 rounded-lg shadow">
                     <div ><span class="text-xl font-semibold mb-4   ">Done </span> <span class="ml-52  text-blue-600" id="donen">0</span></div>
                     <ul id="done_list" class="min-h-[200px] space-y-2"></ul>
