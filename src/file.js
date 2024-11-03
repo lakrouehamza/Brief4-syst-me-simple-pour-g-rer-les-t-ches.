@@ -18,9 +18,7 @@ var inProgress_liste = document.getElementById("inProgress_list");
 var done_liste = document.getElementById("done_list");
 var save = document.getElementById("saveAdd");
 var edit = document.getElementById("editid");
-var supreme =document.getElementById("deleteid");
-// var checkbo = document.getElementsByName('choix');
-// var filtre = document.querySelectorAll('choix');
+var supreme =document.getElementById("deleteid"); 
 var numbreToDo =document.getElementById("toDon");
 var numbreProgress = document.getElementById('progressn');
 var numbreDone = document.getElementById('donen'); 
@@ -108,16 +106,14 @@ function modalAdd() {
      // rempele les itemes de flex
     for (var i = 0; i < listeElement.length; i++) {
         var itemHTML = `
-            <div class="bg-white rounded p-4 mb-4" style="background-color: ${listeElement[i].proprety2}">
-                <h3 class="font-bold"  >${listeElement[i].title2}</h3>
-                <p >${listeElement[i].des2}</p>
+            <div  class="bg-white rounded p-4 mb-4" onclick="elementAfiche(${i})"  ondblclick="elementAfiche(${-i})" style="background-color: ${listeElement[i].proprety2}">
+                <h3 class="font-bold"  >${listeElement[i].title2}</h3> 
                 <div class="flex justify-between mt-2">
                     <button class="bg-blue-500 text-white py-1 px-3 rounded"    onclick="addEdet(${i})" id ="editid">Edit</button>
                     <button class="bg-red-500 text-white py-1 px-3 rounded"id="deleteid" id="deleteid"  onclick="deleteTask(${i})">Delete</button>
                 </div>
             </div>
         `;
-
         switch (listeElement[i].category2) {
             case 'TO DO':
                 toDo_liste.innerHTML += itemHTML; 
@@ -163,7 +159,7 @@ function addEdet(index) {
     propretyEdet.value = task.proprety2;
     categoryEdet.value = task.category2;
 
-    // Save changes made in the edit modal
+    // Save changes made dit modal
     document.getElementById("saveEdet").onclick = function() {
         task.title2 = titleEdet.value;
         task.des2 = desEdet.value;
@@ -180,6 +176,7 @@ function deleteTask(index) {
     listeElement.splice(index, 1);
     modalAdd(); 
 }
+
 // profils = profils.filter(p => p.id !== id);
 function filterTasks(pro){
 console.log(pro);
@@ -193,19 +190,63 @@ var listeTemp = listeElement;
 
 }
 function compareDate(p1, p2) { //jj/mm/aaaa
-    // Compare years
+    // Compare annee
     if (p1.date2.substring(6, 10) !== p2.date2.substring(6, 10)) {
         return p1.date2.substring(6, 10).localeCompare(p2.date2.substring(6, 10));
     }
-    // Compare months
+    // Compare mois
     else if (p1.date2.substring(3, 5) !== p2.date2.substring(3, 5)) {
         return p1.date2.substring(3, 5).localeCompare(p2.date2.substring(3, 5));
     }
-    // Compare days
+    // Compare jours
     return p1.date2.substring(0, 2).localeCompare(p2.date2.substring(0, 2));
 }
 
 function tri() {
     listeElement.sort(compareDate);
     modalAdd();
+}
+function elementAfiche(index){
+    toDo_liste.innerHTML = "";
+    inProgress_liste.innerHTML = "";
+    done_liste.innerHTML = "";
+
+     // rempele les itemes de flex
+    for (var i = 0; i < listeElement.length; i++) {
+        if(i==index){
+            var itemHTML = `
+            <div  class="bg-white rounded p-4 mb-4" onclick="elementAfiche(${i})" style="background-color: ${listeElement[i].proprety2}">
+                <h3 class="font-bold"  >${listeElement[i].title2}</h3>
+                <p >${listeElement[i].des2}</p>
+                <p >${listeElement[i].date2}</p>
+                <div class="flex justify-between mt-2">
+                    <button class="bg-blue-500 text-white py-1 px-3 rounded"    onclick="addEdet(${i})" id ="editid">Edit</button>
+                    <button class="bg-red-500 text-white py-1 px-3 rounded"id="deleteid" id="deleteid"  onclick="deleteTask(${i})">Delete</button>
+                </div>
+            </div>
+        `;
+        }else
+        var itemHTML = `
+            <div  class="bg-white rounded p-4 mb-4" onclick="elementAfiche(${i})"  style="background-color: ${listeElement[i].proprety2}">
+                <h3 class="font-bold"  >${listeElement[i].title2}</h3>
+                <div class="flex justify-between mt-2">
+                    <button class="bg-blue-500 text-white py-1 px-3 rounded"    onclick="addEdet(${i})" id ="editid">Edit</button>
+                    <button class="bg-red-500 text-white py-1 px-3 rounded"id="deleteid" id="deleteid"  onclick="deleteTask(${i})">Delete</button>
+                </div>
+            </div>
+        `;
+        switch (listeElement[i].category2) {
+            case 'TO DO':
+                toDo_liste.innerHTML += itemHTML; 
+                break;
+            case 'DOING':
+                inProgress_liste.innerHTML += itemHTML; 
+                break;
+            case 'DON':
+                done_liste.innerHTML += itemHTML; 
+                break;
+            default:break;
+        }
+    }
+    statistique();
 }
