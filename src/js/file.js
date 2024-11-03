@@ -1,111 +1,252 @@
+// ********************** declaration des variaible ********************************
 
-function modalAdd(){
-for(var i = 0 ; i<5 ; i++){
-    var modal = document.getElementById("todo-list");
-    modal.innerHTML +=`                <div class="bg-white shadow-md rounded p-4 mb-4">
-                    <h3 class="font-bold">Task Title</h3>
-                    <p>Description of the task.</p>
-                    <div class="flex justify-between mt-2">
-                    <button class="bg-blue-500 text-white py-1 px-3 rounded">Edit</button>
-                    <button class="bg-red-500 text-white py-1 px-3 rounded">Delete</button>
-                </div>`;    
-}
-}
-function addTesk(){
-        var mo = document.getElementById("modal1");
-    mo.innerHTML +=`
-   <!-- Modal toggle -->
+var modal = document.getElementById("divModal");
+var modal2 = document.getElementById("divModal2");
+var des1 = document.getElementById('descriptionid');
+var date1 = document.getElementById('dateid');
+var proprety1 = document.getElementById('propretyid');
+var category1 = document.getElementById('categoryid');
+var title1 = document.getElementById('Titleid');
+var modalEdet= document.getElementById("divModal2");
+var desEdet = document.getElementById('descriptionid2');
+var dateEdet = document.getElementById('dateid2');
+var propretyEdet = document.getElementById('propretyid2');
+var categoryEdet = document.getElementById('categoryid2');
+var titleEdet = document.getElementById('Titleid2');
+var toDo_liste = document.getElementById("todo_list");
+var inProgress_liste = document.getElementById("inProgress_list");
+var done_liste = document.getElementById("done_list");
+var save = document.getElementById("saveAdd");
+var edit = document.getElementById("editid");
+var supreme =document.getElementById("deleteid"); 
+var numbreToDo =document.getElementById("toDon");
+var numbreProgress = document.getElementById('progressn');
+var numbreDone = document.getElementById('donen'); 
 
-  
-  <!-- Main modal -->
-  <div id="crud-modal" tabindex="-1" aria-hidden="true" class="heddin overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-      <div class="relative p-4 w-full max-w-md max-h-full">
-          <!-- Modal content -->
-          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-              <!-- Modal header -->
-              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                      Create New task
-                  </h3>
-                  <button id="myBtn2" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal" onclick="fermeaddTesk()">
-                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                      </svg>
-                      <span class="sr-only">Close modal</span>
-                  </button>
-              </div>
-              <!-- Modal body -->
-              <form class="p-4 md:p-5">
-                  <div class="grid gap-4 mb-4 grid-cols-2">
-                      <div class="col-span-2">
-                          <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                          <input type="text" name="Titleid" id="Titleid" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product tilte" required="">
-                      </div>
-                      <div class="col-span-2 sm:col-span-1">
-                        <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">proprety</label>
-                        <select id="Titleid" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            <option selected="">select proprety</option>
-                            <option value="TO DO">P1</option>
-                            <option value="DOING">P2</option>
-                            <option value="DON">P3</option>
-                        </select>
-                    </div>
-                      
-           
-                      <div class="col-span-2">
-                        <label for="dueDate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Due Date</label>
-                        <input type="date" id="dueDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
-                    </div>
-  
-  
-                      <div class="col-span-2">
-                          <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
-                          <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write product description here"></textarea>                    
-                      </div>
-                  </div>
-                  <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                      Add new product
-                  </button>
-              </form>
-          </div>
-      </div>
+// *************  declaration un liste pour stock  les objet localment ************
+var listeElement = [];
+// ************* display pour la modal  ********************************************
+modal.style.display = "none"; 
+// ************* display pour la modal edet ****************************************
+modal2.style.display = "none";
 
-    `
-}
-function fermeaddTesk(){
-    var mo = document.getElementById("modal1");
-    mo.innerHTML =" ";
+// ********* display blok pour la mode consernent cilk sur la button add task ******
+function addTesk() {
+     
+    modal.style.display = "block";
+    des1.value="";
+    date1.value="";
+    proprety1.value="Select proprety";
+    category1.value="Select category";
+    title1.value="";
 }
 
+// ************** blok pour la mode consernent cilk sur la button ferme modal ******
+function fermeaddTesk() {
+    modal.style.display = "none";
+    modal2.style.display = "none";
+}
+//************fonction pour lire le varaible dans input et stock dans tableau ******  
 
-var task =  {
-    titre : "namza",
-    proprety :"p1",
-    date:"20/02/2000" ,
-    Description:"hello hello"
-};
-var listeTOD = {task};
-function addToDO(){
-
+    // category1.value="Select category";
 
 
-// listeTOD.push(task);
-alert(listeTOD[0].titre);
+    function colorf(){
+
+        if (des1.value == "" )
+            des1.style.backgroundColor ="red";
+        else 
+            des1.style.backgroundColor ="gray ";
+         if (title1.value == "" )
+            title1.style.backgroundColor ="red";
+        else 
+            title1.style.backgroundColor ="gray ";
+        if (date1.value == "" )
+            date1.style.color ="red";
+        else 
+            date1.style.color ="white";
+        if (proprety1.value == "Select proprety" )
+            proprety1.style.color ="red";
+        else 
+            proprety1.style.color ="white";
+        if (category1.value == "Select category" )
+            category1.style.color ="red";
+        else 
+            category1.style.color ="white";
+     }
+
+save.addEventListener("click", function() {
+    if(des1.value != "" && title1.value != "" && date1.value != "" && proprety1.value != "Select proprety" && category1.value != "Select category" ){
+                
+        var elementListe = {
+            title2: title1.value,
+            date2: date1.value,
+            proprety2: proprety1.value, 
+            category2 :category1.value,
+            des2: des1.value
+        };
+        colorf();
+        fermeaddTesk();
+        listeElement.push(elementListe);    
+        modalAdd();
+    }else {
+        alert("select toout le input");
+        colorf();
+    }
+
+});
+ 
+//******** fonction est afficher les contune de tableau dans les itemes de flex ******
+function modalAdd() {
+    // supreme le itemes de flex
+    toDo_liste.innerHTML = "";
+    inProgress_liste.innerHTML = "";
+    done_liste.innerHTML = "";
+
+     // rempele les itemes de flex
+    for (var i = 0; i < listeElement.length; i++) {
+        var itemHTML = `
+            <div  class="bg-white rounded p-4 mb-4" onclick="elementAfiche(${i})"  ondblclick="elementAfiche(${-i})" style="background-color: ${listeElement[i].proprety2}">
+                <h3 class="font-bold"  >${listeElement[i].title2}</h3> 
+                <div class="flex justify-between mt-2">
+                    <button class="bg-blue-500 text-white py-1 px-3 rounded"    onclick="addEdet(${i})" id ="editid">Edit</button>
+                    <button class="bg-red-500 text-white py-1 px-3 rounded"id="deleteid" id="deleteid"  onclick="deleteTask(${i})">Delete</button>
+                </div>
+            </div>
+        `;
+        switch (listeElement[i].category2) {
+            case 'TO DO':
+                toDo_liste.innerHTML += itemHTML; 
+                break;
+            case 'DOING':
+                inProgress_liste.innerHTML += itemHTML; 
+                break;
+            case 'DON':
+                done_liste.innerHTML += itemHTML; 
+                break;
+            default:break;
+        }
+    }
+    statistique();
+
 }
 
+function statistique(){
+       
+var  tempToDo = 0;
+var tempProgress = 0;
+var tempDone =0;
+for (var i = 0; i < listeElement.length; i++) {
 
+    switch (listeElement[i].category2) {
+        case 'TO DO':tempToDo++;break;
+        case 'DOING':tempProgress++;break;
+        case 'DON':tempDone++;break;
+        default:;
+    }
 
+}
+numbreToDo.innerHTML=tempToDo;
+numbreProgress.innerHTML=tempProgress;
+numbreDone.innerHTML=tempDone;
+}
+function addEdet(index) {
+    modal2.style.display = "block";
+    const task = listeElement[index];
+    titleEdet.value = task.title2;
+    desEdet.value = task.des2;
+    dateEdet.value = task.date2;
+    propretyEdet.value = task.proprety2;
+    categoryEdet.value = task.category2;
 
+    // Save changes made dit modal
+    document.getElementById("saveEdet").onclick = function() {
+        task.title2 = titleEdet.value;
+        task.des2 = desEdet.value;
+        task.date2 = dateEdet.value;
+        task.proprety2 = propretyEdet.value;
+        task.category2 = categoryEdet.value;
+        fermeaddTesk();
+        modalAdd();
+    };
+}
 
+// Deletes a task
+function deleteTask(index) {
+    listeElement.splice(index, 1);
+    modalAdd(); 
+}
 
+// profils = profils.filter(p => p.id !== id);
+function filterTasks(pro){
+console.log(pro);
 
-{/* <div class="col-span-2 sm:col-span-1">
-<label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
-<select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-    <option selected="">Select category</option>
-    <option value="TO DO">TO DO</option>
-    <option value="DOING">DOING</option>
-    <option value="DON">DON</option>
-</select>
-</div> */}
+var listeTemp = listeElement;
+    listeElement =listeElement.filter(elementListe=>elementListe.proprety2 == pro);
+    console.log(listeElement);
+    modalAdd();
+    listeElement=listeTemp;  
+    console.log(listeElement); 
+
+}
+function compareDate(p1, p2) { //jj/mm/aaaa
+    // Compare annee
+    if (p1.date2.substring(6, 10) !== p2.date2.substring(6, 10)) {
+        return p1.date2.substring(6, 10).localeCompare(p2.date2.substring(6, 10));
+    }
+    // Compare mois
+    else if (p1.date2.substring(3, 5) !== p2.date2.substring(3, 5)) {
+        return p1.date2.substring(3, 5).localeCompare(p2.date2.substring(3, 5));
+    }
+    // Compare jours
+    return p1.date2.substring(0, 2).localeCompare(p2.date2.substring(0, 2));
+}
+
+function tri() {
+    listeElement.sort(compareDate);
+    modalAdd();
+}
+function elementAfiche(index){
+    toDo_liste.innerHTML = "";
+    inProgress_liste.innerHTML = "";
+    done_liste.innerHTML = "";
+
+     // rempele les itemes de flex
+    for (var i = 0; i < listeElement.length; i++) {
+        if(i==index){
+            var itemHTML = `
+            <div  class="bg-white rounded p-4 mb-4" onclick="elementAfiche(${i})" style="background-color: ${listeElement[i].proprety2}">
+                <h3 class="font-bold"  >${listeElement[i].title2}</h3>
+                <p >${listeElement[i].des2}</p>
+                <p >${listeElement[i].date2}</p>
+                <div class="flex justify-between mt-2">
+                    <button class="bg-blue-500 text-white py-1 px-3 rounded"    onclick="addEdet(${i})" id ="editid">Edit</button>
+                    <button class="bg-red-500 text-white py-1 px-3 rounded"id="deleteid" id="deleteid"  onclick="deleteTask(${i})">Delete</button>
+                </div>
+            </div>
+        `;
+        }else
+        var itemHTML = `
+            <div  class="bg-white rounded p-4 mb-4" onclick="elementAfiche(${i})"  style="background-color: ${listeElement[i].proprety2}">
+                <h3 class="font-bold"  >${listeElement[i].title2}</h3>
+                <div class="flex justify-between mt-2">
+                    <button class="bg-blue-500 text-white py-1 px-3 rounded"    onclick="addEdet(${i})" id ="editid">Edit</button>
+                    <button class="bg-red-500 text-white py-1 px-3 rounded"id="deleteid" id="deleteid"  onclick="deleteTask(${i})">Delete</button>
+                </div>
+            </div>
+        `;
+        switch (listeElement[i].category2) {
+            case 'TO DO':
+                toDo_liste.innerHTML += itemHTML; 
+                break;
+            case 'DOING':
+                inProgress_liste.innerHTML += itemHTML; 
+                break;
+            case 'DON':
+                done_liste.innerHTML += itemHTML; 
+                break;
+            default:break;
+        }
+    }
+    statistique();
+}
