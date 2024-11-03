@@ -34,6 +34,7 @@ modal2.style.display = "none";
 
 // ********* display blok pour la mode consernent cilk sur la button add task ******
 function addTesk() {
+     
     modal.style.display = "block";
     des1.value="";
     date1.value="";
@@ -52,23 +53,28 @@ function fermeaddTesk() {
     // category1.value="Select category";
 
 
-    function colorf(colredwite){
+    function colorf(){
 
-        if (des1.value == "" ){
-            des1.style.backgroundColor ="recolredwited";
-        }
-         if (title1.value == "" ){
-        title1.style.backgroundColor ="colredwite";
-        }
-        if (date1.value == "" ){
-            date1.style.color ="colredwite";
-        }
-        if (proprety1.value == "Select proprety" ){
-            proprety1.style.color ="colredwite";
-        }
-        if (category1.value == "Select category" ){
-            category1.style.color ="colredwite";
-        } 
+        if (des1.value == "" )
+            des1.style.backgroundColor ="red";
+        else 
+            des1.style.backgroundColor ="gray ";
+         if (title1.value == "" )
+            title1.style.backgroundColor ="red";
+        else 
+            title1.style.backgroundColor ="gray ";
+        if (date1.value == "" )
+            date1.style.color ="red";
+        else 
+            date1.style.color ="white";
+        if (proprety1.value == "Select proprety" )
+            proprety1.style.color ="red";
+        else 
+            proprety1.style.color ="white";
+        if (category1.value == "Select category" )
+            category1.style.color ="red";
+        else 
+            category1.style.color ="white";
      }
 
 save.addEventListener("click", function() {
@@ -81,13 +87,13 @@ save.addEventListener("click", function() {
             category2 :category1.value,
             des2: des1.value
         };
-         colorf(white);
+        colorf();
         fermeaddTesk();
         listeElement.push(elementListe);    
         modalAdd();
     }else {
         alert("select toout le input");
-        colorf(red);
+        colorf();
     }
 
 });
@@ -122,7 +128,7 @@ function modalAdd() {
             case 'DON':
                 done_liste.innerHTML += itemHTML; 
                 break;
-            default:;
+            default:break;
         }
     }
     statistique();
