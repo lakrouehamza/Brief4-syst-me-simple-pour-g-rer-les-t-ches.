@@ -37,8 +37,8 @@ function addTesk() {
     modal.style.display = "block";
     des1.value="";
     date1.value="";
-    proprety1.value="";
-    category1.value="";
+    proprety1.value="Select proprety";
+    category1.value="Select category";
     title1.value="";
 }
 
@@ -47,11 +47,33 @@ function fermeaddTesk() {
     modal.style.display = "none";
     modal2.style.display = "none";
 }
-//************fonction pour lire le varaible dans input et stock dans tableau ******
+//************fonction pour lire le varaible dans input et stock dans tableau ******  
+
+    // category1.value="Select category";
+
+
+    function colorf(colredwite){
+
+        if (des1.value == "" ){
+            des1.style.backgroundColor ="recolredwited";
+        }
+         if (title1.value == "" ){
+        title1.style.backgroundColor ="colredwite";
+        }
+        if (date1.value == "" ){
+            date1.style.color ="colredwite";
+        }
+        if (proprety1.value == "Select proprety" ){
+            proprety1.style.color ="colredwite";
+        }
+        if (category1.value == "Select category" ){
+            category1.style.color ="colredwite";
+        } 
+     }
+
 save.addEventListener("click", function() {
-    if (des1.value == "" || title1.value == "" || date1.value == null) {
-        alert("Remplissez tous les champs");
-    } else {
+    if(des1.value != "" && title1.value != "" && date1.value != "" && proprety1.value != "Select proprety" && category1.value != "Select category" ){
+                
         var elementListe = {
             title2: title1.value,
             date2: date1.value,
@@ -59,12 +81,17 @@ save.addEventListener("click", function() {
             category2 :category1.value,
             des2: des1.value
         };
+         colorf(white);
         fermeaddTesk();
-        listeElement.push(elementListe);
+        listeElement.push(elementListe);    
+        modalAdd();
+    }else {
+        alert("select toout le input");
+        colorf(red);
     }
-    modalAdd();
-});
 
+});
+ 
 //******** fonction est afficher les contune de tableau dans les itemes de flex ******
 function modalAdd() {
     // supreme le itemes de flex
@@ -95,8 +122,7 @@ function modalAdd() {
             case 'DON':
                 done_liste.innerHTML += itemHTML; 
                 break;
-            default:
-                alert('Erreur dans la catégorie');
+            default:;
         }
     }
     statistique();
